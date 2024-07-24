@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_monkey/utils/Style/meal_colors.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;
@@ -7,16 +8,20 @@ class CustomElevatedButton extends StatelessWidget {
   final double fontSize;
   final Color textColor;
   final Color borderColor;
+  final bool hasIcon;
+  final IconData? iconData;
 
   const CustomElevatedButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     required this.color,
     required this.textColor,
     required this.fontSize,
     required this.borderColor,
-  }) : super(key: key);
+    required this.hasIcon,
+    this.iconData,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,16 @@ class CustomElevatedButton extends StatelessWidget {
         width:MediaQuery.of(context).size.width*0.6,
         height: MediaQuery.of(context).size.height*0.065,
         alignment: Alignment.center,
-        child: Text(text)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            hasIcon == true?   Padding(
+              padding:  EdgeInsets.only(right: MediaQuery.of(context).size.width*0.08),
+              child: Icon(iconData,color: MealColors.white,),
+            ):const SizedBox(),
+            Text(text),
+          ],
+        )),
     );
   }
 }

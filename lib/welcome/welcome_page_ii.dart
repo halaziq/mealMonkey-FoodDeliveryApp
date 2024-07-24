@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_monkey/components/customElevatedButton.dart';
+import 'package:meal_monkey/components/custom_elevated_button.dart';
 import 'package:meal_monkey/utils/Routes/meal_route.dart';
 import 'package:meal_monkey/utils/Style/meal_colors.dart';
 
@@ -72,6 +72,7 @@ class _WelcomePageIIState extends State<WelcomePageII> {
                padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height*0.1),
                child: CustomElevatedButton(
                 text: "Login",
+                hasIcon: false,
                 onPressed: ()=>
                   Navigator.pushNamed(context, MealRoutes.login)
 
@@ -85,6 +86,7 @@ class _WelcomePageIIState extends State<WelcomePageII> {
                  padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height*0.02),
                  child: CustomElevatedButton(
                                text: "Create an Account",
+                               hasIcon: false,
                                onPressed: ()=>Navigator.pushNamed(context, MealRoutes.signup),
  
                                color: MealColors.white,
@@ -92,10 +94,6 @@ class _WelcomePageIIState extends State<WelcomePageII> {
                  fontSize: 16,
                  borderColor: MealColors.orange,),
                )
-             
-             
-
-
       ]
       ,),
     );

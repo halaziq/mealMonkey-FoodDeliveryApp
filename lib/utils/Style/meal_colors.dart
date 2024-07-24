@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -9,4 +8,8 @@ class MealColors{
   static const Color secondaryFont = Color(0xff7C7D7E);
   static const Color textFileds = Color(0xffF2F2F2);
   static const Color textFiledString = Color(0xffB6B7B7);
+  static const Color facebook = Color(0xff367FC0);
+  static const Color gmail = Color(0xffDD4B39);
+
+
 }

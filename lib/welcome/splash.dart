@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:meal_monkey/utils/Routes/meal_route.dart';
 import 'package:meal_monkey/utils/Style/meal_colors.dart';
 

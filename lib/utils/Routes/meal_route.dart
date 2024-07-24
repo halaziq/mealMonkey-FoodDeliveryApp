@@ -4,5 +4,6 @@ class MealRoutes{
   static const String welcome2 = '/welcomePageII';
   static const String login = '/Login';
   static const String signup = '/signup';
+  static const String home = '/homePage';
 
 }

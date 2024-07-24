@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:meal_monkey/components/customElevatedButton.dart';
+import 'package:meal_monkey/components/custom_elevated_button.dart';
 import 'package:meal_monkey/utils/Routes/meal_route.dart';
-import 'package:meal_monkey/utils/Routes/meal_router.dart';
 import 'package:meal_monkey/utils/Style/meal_colors.dart';
 
 class WelcomePageI extends StatefulWidget {
@@ -23,7 +21,6 @@ class _WelcomePageIState extends State<WelcomePageI> {
   String find1 = "Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep";
   String fast1 = "Fast food delivery to your home, office wherever you are";
   String live1 = "Real time tracking of your food on the app once you placed the order";
-  bool isEqualTo = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +92,7 @@ class _WelcomePageIState extends State<WelcomePageI> {
                padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height*0.1),
                child: CustomElevatedButton(
                 text: "Next",
+                hasIcon: false,
                 color: MealColors.orange,
                 borderColor: MealColors.orange,
                 textColor: MealColors.white,
