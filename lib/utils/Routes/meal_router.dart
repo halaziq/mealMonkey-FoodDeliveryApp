@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal_monkey/authentication/signup.dart';
+import 'package:meal_monkey/app_view.dart';
+import 'package:meal_monkey/authentication/reset_password/reset_password.dart';
+import 'package:meal_monkey/authentication/sign_up/signup.dart';
 import 'package:meal_monkey/navigation/home_page.dart';
 import 'package:meal_monkey/utils/Routes/meal_route.dart';
 import 'package:meal_monkey/welcome/splash.dart';
@@ -13,6 +15,9 @@ class MealRouter{
       case MealRoutes.splash:
       return MaterialPageRoute(builder: (_)=> const Splash(),
       settings: settings);
+      case MealRoutes.appView:
+      return MaterialPageRoute(builder: (_)=> const AppView(),
+      settings: settings);
       case MealRoutes.welcome1:
       return MaterialPageRoute(builder: (_)=> const WelcomePageI(),
       settings: settings);
@@ -24,6 +29,9 @@ class MealRouter{
       settings: settings);
       case MealRoutes.signup:
       return MaterialPageRoute(builder: (_)=> const Signup(),
+      settings: settings);
+      case MealRoutes.resetPass:
+      return MaterialPageRoute(builder: (_)=> const ResetPassword(),
       settings: settings);
       case MealRoutes.home:
       return MaterialPageRoute(builder: (_)=> const HomePage(),

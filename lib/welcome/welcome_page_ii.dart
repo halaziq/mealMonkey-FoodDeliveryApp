@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meal_monkey/authentication/login.dart';
+import 'package:meal_monkey/authentication/sign_up/signup.dart';
+import 'package:meal_monkey/blocs/authentication_bloc/authentication_bloc.dart';
+import 'package:meal_monkey/blocs/signIn_bloc/sign_in_bloc.dart';
+import 'package:meal_monkey/blocs/signUp_bloc/sign_up_bloc.dart';
 import 'package:meal_monkey/components/custom_elevated_button.dart';
 import 'package:meal_monkey/utils/Routes/meal_route.dart';
 import 'package:meal_monkey/utils/Style/meal_colors.dart';
@@ -73,8 +79,17 @@ class _WelcomePageIIState extends State<WelcomePageII> {
                child: CustomElevatedButton(
                 text: "Login",
                 hasIcon: false,
-                onPressed: ()=>
-                  Navigator.pushNamed(context, MealRoutes.login)
+                  onPressed: (){
+
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context)=> BlocProvider<SignInBloc>(create:
+                      (context)=>SignInBloc(
+                      userRepository: context.read<AuthenticationBloc>().userRepository
+                     ) ,
+                     child: const Login(),
+                       ))
+                    );      
+                }
 
                 , 
                 color: MealColors.orange,
@@ -87,7 +102,19 @@ class _WelcomePageIIState extends State<WelcomePageII> {
                  child: CustomElevatedButton(
                                text: "Create an Account",
                                hasIcon: false,
-                               onPressed: ()=>Navigator.pushNamed(context, MealRoutes.signup),
+                               
+                  onPressed: (){
+
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context)=> BlocProvider<SignUpBloc>(create:
+                      (context)=>SignUpBloc(
+                      userRepository: context.read<AuthenticationBloc>().userRepository
+                     ) ,
+                     child: const Signup(),
+                       ))
+                    );      
+                }
+                               ,
  
                                color: MealColors.white,
                  textColor: MealColors.orange, 

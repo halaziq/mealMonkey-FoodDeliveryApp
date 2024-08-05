@@ -6,6 +6,11 @@ class CustomTextFiled extends StatelessWidget {
   final TextEditingController controller;
   final TextInputType keyboardType;
   final bool obscureText;
+  final String? errorMsg;
+  final String? Function(String?)? validator;
+  final String? Function(String?)? onChanged;
+  final FocusNode? focusNode;
+  final VoidCallback? onTap;
 
   const CustomTextFiled({
     super.key,
@@ -13,6 +18,11 @@ class CustomTextFiled extends StatelessWidget {
     required this.controller,
     required this.keyboardType,
     required this.obscureText,
+     this.errorMsg,
+     this.validator,
+     this.onChanged,
+     this.focusNode,
+     this.onTap
     });
 
   @override
@@ -27,13 +37,17 @@ class CustomTextFiled extends StatelessWidget {
         color: MealColors.textFileds,
         borderRadius: BorderRadius.circular(30.0),
       ),
-      child: TextField(
+      child: TextFormField(
+        validator: validator,
         controller: controller,
+        focusNode: focusNode,
+        onTap: onTap,
         keyboardType: keyboardType,
         obscureText: obscureText,
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hintText,
+          errorText: errorMsg,
           hintStyle: const TextStyle(
             fontSize: 14,
             color: MealColors.textFiledString),
